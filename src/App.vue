@@ -1,6 +1,25 @@
-<script setup>
+<script>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+
+export default {
+  components: {
+    RouterLink,
+    RouterView,
+    HelloWorld,
+  },
+  methods: {
+    redirect() {
+      this.$router.push('/about')
+    },
+    back() {
+      this.$router.go(-1)
+    },
+    forward() {
+      this.$router.go(1)
+    },
+  },
+}
 </script>
 
 <template>
@@ -15,6 +34,20 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/about">About</RouterLink>
         <RouterLink :to="{ name: 'job' }">Jobs</RouterLink>
       </nav>
+      <div class="inline-flex rounded-lg shadow-md overflow-hidden border border-gray-300">
+        <button class="px-4 py-2 text-sm font-medium text-gray-700 bg-white hover:bg-gray-100 focus:ring focus:ring-blue-300"
+        @click="redirect">
+          Redirect
+        </button>
+        <button class="px-4 py-2 text-sm font-medium text-gray-700 bg-white hover:bg-gray-100 border-l border-gray-300 focus:ring focus:ring-blue-300"
+        @click="back">
+          Back
+        </button>
+        <button class="px-4 py-2 text-sm font-medium text-gray-700 bg-white hover:bg-gray-100 border-l border-gray-300 focus:ring focus:ring-blue-300"
+        @click="forward">
+          Forward
+        </button>
+      </div>
     </div>
   </header>
 
