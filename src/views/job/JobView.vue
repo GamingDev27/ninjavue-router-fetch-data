@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main v-if="jobs.length > 0">
     <h1>Jobs</h1>
     <div v-for="job in jobs" :key="job.id">
       <router-link :to="{ name: 'job-detail', params: { id: job.id } }"

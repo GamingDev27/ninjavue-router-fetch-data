@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView      from '../views/HomeView.vue'
-import JobView       from '../views/job/JobView.vue'
-import JobDetailView from '../views/job/JobDetailView.vue'
+import EditProjectView from '../views/project/EditView.vue'
+import CreateProjectView from '../views/project/AddView.vue'
 import NotFoundView       from '../views/404View.vue'
 
 const router = createRouter({
@@ -13,25 +13,16 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
-    },
-    { 
-      path: '/jobs',
-      name: 'job',
-      component: JobView,
-    },
-    {
-      path: '/jobs/:id ',
-      name: 'job-detail',
-      component: JobDetailView,
+      path: '/project/edit/:id ',
+      name: 'project-edit',
+      component: EditProjectView,
       props: true
     },
-
+    {
+      path: '/project/add ',
+      name: 'project-add',
+      component: CreateProjectView,
+    },
     //redirect
     {
       path: '/all-jobs',

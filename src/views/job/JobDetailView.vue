@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <main v-if="job">
         <h1>Job Details Page</h1>
         <div>You job is {{ job.title }}</div>
         <p>{{job.description}}</p>

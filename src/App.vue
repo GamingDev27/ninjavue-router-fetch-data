@@ -1,12 +1,10 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   components: {
     RouterLink,
     RouterView,
-    HelloWorld,
   },
   methods: {
     redirect() {
@@ -24,96 +22,28 @@ export default {
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink :to="{ name: 'job' }">Jobs</RouterLink>
+    <div class="wrapper w-80 mx-auto pt-12">
+      <nav class="flex justify-evenly items-center  py-4">
+        <RouterLink to="/" class="text-stone-500 text-xl ">Projects</RouterLink>
+        <RouterLink :to="{name: 'project-add'}" class="text-stone-500 text-xl ">Add a New project</RouterLink>
       </nav>
-      <div class="inline-flex rounded-lg shadow-md overflow-hidden border border-gray-300">
-        <button class="px-4 py-2 text-sm font-medium text-gray-700 bg-white hover:bg-gray-100 focus:ring focus:ring-blue-300"
-        @click="redirect">
-          Redirect
-        </button>
-        <button class="px-4 py-2 text-sm font-medium text-gray-700 bg-white hover:bg-gray-100 border-l border-gray-300 focus:ring focus:ring-blue-300"
-        @click="back">
-          Back
-        </button>
-        <button class="px-4 py-2 text-sm font-medium text-gray-700 bg-white hover:bg-gray-100 border-l border-gray-300 focus:ring focus:ring-blue-300"
-        @click="forward">
-          Forward
-        </button>
-      </div>
     </div>
   </header>
 
   <RouterView />
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #FAF9F6;
   width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  height: 100vh;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.router-link-active {
+  border-bottom: 4px solid #34D399;
 }
 </style>
