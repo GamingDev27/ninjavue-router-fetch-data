@@ -80,19 +80,19 @@
       "id": "1",
       "name": "US-Canada Trade War3",
       "description": "Ragnarok",
-      "status": true
+      "status": false
     },
     {
       "id": "2",
       "name": "Make marketing email",
       "description": "Talaga",
-      "status": 0
+      "status": true
     },
     {
       "id": "3",
       "name": "Update Promo links",
       "description": "This is project 2",
-      "status": 0
+      "status": true
     },
     {
       "id": "d8a4",

@@ -18,6 +18,7 @@
                 :class="{ 'text-green-500': project.status == 1 }"
                 class="active:text-green-500 hover:cursor-pointer font-extrabold"
             />
+            <button @click="toggleStatus">check</button>
             </span>
         </div>
         <p v-if="showDetails" class="text-slate-400 text">{{ project.description }}</p>
